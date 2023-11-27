@@ -1,13 +1,13 @@
-import express from "express";
-import bodyParser from "body-parser";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import path from "path";
+const express = require("express");
+const bodyParser = require("body-parser");
+const { dirname } = require("path");
+const { fileURLToPath } = require("url");
+const path = require("path");
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express ();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -41,6 +41,8 @@ app.get('/links', (req, res) => {
     res.render('extra'); // Use res.render without the file extension
   });
   
-app.listen(port, () => {
+  app.listen(port, () => {
     console.log(`Listening to port ${port}`); 
 });
+
+module.exports = app;
