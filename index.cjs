@@ -41,7 +41,7 @@ app.get('/links', (req, res) => {
     res.render('extra'); // Use res.render without the file extension
   });
   
-  app.listen(port, () => {
+  app.listen(port, '0.0.0.0', () => {
     console.log(`Listening to port ${port}`); 
 });
 
