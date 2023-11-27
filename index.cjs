@@ -4,7 +4,8 @@ const { dirname } = require("path");
 const { fileURLToPath } = require("url");
 const path = require("path");
 
-const __dirname = dirname(new URL(import.meta.url).pathname);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express ();
 const port = process.env.PORT || 3000;
