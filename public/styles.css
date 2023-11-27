@@ -1,0 +1,128 @@
+body {
+    animation: slide 60s linear infinite alternate;
+    background-image: url("https://images.unsplash.com/photo-1537420327992-d6e192287183?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: repeat;
+  }
+  
+  @keyframes slide {
+    to {
+      background-position: 0 50%;
+    }
+  }
+
+  /* Top = moving background | Bottom = lock */
+
+  * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9a9a9a;
+}
+
+.btn-lock {
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
+    display: inline-block;
+    background: #000000;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    padding: 12px 0 0 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-lock svg {
+    fill: none;
+    position: absolute;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    opacity: 1; /* Set initial opacity to make the lock visible */
+}
+
+.btn-lock svg .bling {
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 3;
+    stroke-dashoffset: 15;
+    transition: all 0.3s ease;
+}
+
+.btn-lock svg .lock {
+    stroke: #b4b4b4;
+    stroke-width: 4;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    transition: all 0.4s ease;
+}
+
+.btn-lock svg .lockb {
+    fill: #b5b3b3;
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    transform: rotate(0);
+    transform-origin: 14px 22px;
+    transition: all 0.2s ease;
+}
+
+#inpLock {
+    display: none;
+}
+
+#inpLock:checked + label {
+    background: #575757;
+}
+
+#inpLock:checked + label svg .lockb {
+    transform: rotate(8deg);
+    transform-origin: 14px 20px;
+}
+
+#inpLock:checked + label svg .bling {
+    animation: bling6132 0.3s linear forwards;
+    animation-delay: 0.2s;
+}
+
+#inpLock:checked + label svg .lock {
+    stroke-dasharray: 36; /* Set the dash array for the open lock */
+}
+
+@keyframes bling6132 {
+    50% {
+        stroke-dasharray: 3;
+        stroke-dashoffset: 12;
+    }
+
+    100% {
+        stroke-dasharray: 3;
+        stroke-dashoffset: 9;
+    }
+}
+
+
+/* top = lock | bottom = name on landing page */
+#landing-name{
+display: flex;
+justify-content: center;
+align-content: center;
+margin-bottom: 25vh;
+}
+
+/* top = name on landing page | bottom = h1 */
+h1{
+  text-shadow: rgb(182, 182, 182) 3px 0 10px;
+}
+
+*{
+  font-family: 'Orbitron', sans-serif;
+}
+
